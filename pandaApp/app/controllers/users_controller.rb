@@ -1,5 +1,19 @@
 class UsersController < ApplicationController
 	
+	def create_user
+		@status = self.create()
+
+		
+		if @status == 201
+			@message = 'User Created'
+		else
+			@message = 'User not created'
+		end
+
+		@response = { :status => @status, :message => @message }
+		render :json => @response
+	end
+
 	def index
 		@users = User.all 
 	end
@@ -7,23 +21,19 @@ class UsersController < ApplicationController
 	def create
 		@user = User.new(user_params)
 
-		respond_to do |format|
-			if @user.save
-				format.html { redirect_to api_users_path, notice: 'User was successfully created.' }
-				format.json { render :show, status: :created, location: @user }
-			else
-				format.html { render :new }
-				format.json { render json: @user.errors, status: :unprocessable_entity }
-			end
+		if @user.save
+			return 201
+		else
+			return 205
 		end
+
 	end
 
 	def destroy
 		@user = User.find(params[:id])
 		@user.destroy
 		respond_to do |format|
-			format.html { redirect_to api_users_path, notice: 'User was successfully destroyed.' }
-			format.json { head :no_content }
+			format.html { redirect_to users_path, notice: 'User was successfully destroyed.' }
 		end
 	end
 

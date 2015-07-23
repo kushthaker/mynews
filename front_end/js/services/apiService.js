@@ -24,7 +24,10 @@ ApiService.prototype.createUser = function(userObject) {
 
 	var self = this;
 
-	return self.http.post(self.BASE_URL + '/api/users', {"user": userObject} )
+
+	console.log(userObject); 
+
+	return self.http.post(self.BASE_URL + '/api/users.json', {"user": userObject} )
 	.then(function(response) {
 		console.log("user successfully created")
 		return response.data;

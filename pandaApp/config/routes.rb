@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
-  resources :users, only: :destroy
-
-  get 'api/users' => 'users#index'
-  post 'api/users' => 'users#create'
+  resources :users
+  
+  post 'api/users' => 'users#create_user'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
