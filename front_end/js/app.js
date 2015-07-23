@@ -10,6 +10,10 @@ app.config(function($routeProvider) {
 		templateUrl: '../templates/signup.html',
 		controller: 'signupCtrl as ctrl'
 	})
+	.when('/content', {
+		templateUrl: '../templates/content.html',
+		controller: 'contentCtrl as ctrl'
+	})
 	.otherwise({
 		redirectTo: '/signin',
 	})

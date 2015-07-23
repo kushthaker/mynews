@@ -1,8 +1,8 @@
 
-function signinCtrl() {
+function SigninCtrl() {
    
-   this.check = "yeees";
+   this.check = "yep";
 }
 
 
-angular.module('pandaApp').controller('signinCtrl', signinCtrl);
+angular.module('pandaApp').controller('signinCtrl', SigninCtrl);

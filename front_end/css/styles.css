@@ -4,7 +4,30 @@ input.ng-invalid {
 	border: 1px solid red;
 }
 
+#options {
+	height: 30px;
+}
+
 .signup-form {
 	margin: 100px;
 }
+
+#articles {
+	margin-top: 10px
+}
+
+.article {
+	margin: 30px;
+}
+
+#images {
+	margin-top: 10px;
+}
+
+
+.image {
+	margin: 20px;
+}
+
+
 
