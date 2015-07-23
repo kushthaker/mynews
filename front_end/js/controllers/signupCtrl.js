@@ -1,7 +1,7 @@
 
 function SignupCtrl() {
 
-	this.check = "noooo";
+	this.user = "";
    
 }
 

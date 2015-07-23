@@ -1,4 +1,10 @@
-body, html {
-	margin: 0;
-	height: 100%;
+
+
+input.ng-invalid {
+	border: 1px solid red;
 }
+
+.signup-form {
+	margin: 100px;
+}
+

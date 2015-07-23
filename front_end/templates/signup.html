@@ -1,1 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Panda Signup</title>
+</head>
+
+<body>
+
+	<div class="container signup-form">
+		<form name="frm">
+			<div>
+				<label>Name</label>
+				<input type="text" name="name" ng-model="ctrl.user.name" required />
+			</div>
+			<div>
+				<label>Email</label>
+				<input type="email" name="email" ng-model="ctrl.user.email" required />
+			</div>	
+			<div>
+				<label>Password</label>
+				<input type="password" name="password" ng-model="ctrl.user.password" required />
+			</div>
+		</form>
+	</div>
+
+</body>
+
 <pre> {{ctrl | json}} </pre>
+
+</html>
