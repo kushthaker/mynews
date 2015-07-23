@@ -17,11 +17,11 @@ input.ng-invalid {
 }
 
 .article {
-	margin: 30px;
+	margin: 30px auto;
 }
 
 #images {
-	margin-top: 10px;
+	margin: 10px auto;
 }
 
 

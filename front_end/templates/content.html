@@ -5,43 +5,46 @@
 </head>
 <body>
 
-<section id="options">
-	<div class="row">
-		<div class="col-sm-4">
-			<h4>ng-options for article source</h4>
+	<section id="options">
+		<div class="row">
+			<div class="col-xs-3">
+				<h4>ng-options for article source</h4>
+			</div>
+			<div class="col-xs-9">
+				<h4>ng-options for design source</h4>
+			</div>
 		</div>
-		<div class="col-sm-8">
-			<h4>ng-options for design source</h4>
-		</div>
-	</div>
-</section>
+	</section>
 
 
 
 	<section id="content">
 		<div class="row">
 			
-			<section id="articles">
-				<div class="col-sm-4 text-center">
-					<div class="article">
+			
+			<div class="col-xs-3 text-center">
+				<section id="articles">
+					<div class="article" ng-repeat="post in ctrl.productHunt.posts">
+						<a href="{{post.discussion_url}}"><h4>{{post.name}}</h4></a>
 					</div>
-					<div class="article">
-						<button ng-click="ctrl.getProductHunt()">Call Product</button>
-					</div>
-				</div>
-			</section>
+				</section>
+			</div>
+			
 
-			<section id="images">
-				<div class="col-sm-8 text-center">
-						<img src="../vanilla.png" class="image">
-				</div>
-			</section>
-
+			
+			<div class="col-xs-9 text-center">
+				<section id="images">
+					<span ng-repeat="object in ctrl.dribble">
+						<a href="{{object.html_url}}"><img ng-src="{{object.images.teaser}}" class="image" /></a>
+					</span>
+				</section>
+			</div>
+			
 		</div>
 	</section>
 
 
-<pre> {{ ctrl | json }} </pre>
+	<pre> {{ ctrl | json }} </pre>
 
 
 </body>

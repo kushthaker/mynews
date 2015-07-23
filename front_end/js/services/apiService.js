@@ -43,6 +43,7 @@ ApiService.prototype.getDribble = function() {
 	return self.http.get(self.DRIBBLE_URL + self.dribble_access_token)
 	.then(function(response) {
 		console.log("successful dribble call")
+		console.log(response.data)
 		return response.data;
 	})
 	.catch(function(response) {
@@ -58,6 +59,7 @@ ApiService.prototype.getProductHunt = function() {
 	return self.http.get(self.PH_URL + self.ph_access_token)
 	.then(function(response) {
 		console.log("successful producthunt call")
+		console.log(response.data)
 		return response.data;
 	})
 	.catch(function(response) {
