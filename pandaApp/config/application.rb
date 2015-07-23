@@ -28,10 +28,10 @@ module PandaApp
   #   'Access-Control-Request-Method' => '*'
   # }
 
-      config.action_dispatch.default_headers.merge!({
+    config.action_dispatch.default_headers.merge!({
       'Access-Control-Allow-Origin' => '*',
       'Access-Control-Request-Method' => '*'
     })
-      
+
   end
 end
