@@ -1,27 +1,15 @@
 
-function ContentCtrl(api) {
+function ContentCtrl(api, dribble, $location, productHunt) {
    
-   this.check = "yeees";
+   //services
    this.api = api;
+   this.location = $location;
+
+   //api calls
+   this.dribble = dribble;
+   this.productHunt = productHunt;
+   
 
 }
 
 angular.module('pandaApp').controller('contentCtrl', ContentCtrl);
-
-ContentCtrl.prototype.getDribble = function() {
-
-	var self = this;
-
-	self.api.getDribble().then(function(data) {
-		console.log(data);
-	})
-}
-
-ContentCtrl.prototype.getProductHunt = function() {
-
-	var self = this;
-
-	self.api.getProductHunt().then(function(data) {
-		console.log(data);
-	})
-}

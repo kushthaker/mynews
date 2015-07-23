@@ -12,7 +12,24 @@ app.config(function($routeProvider) {
 	})
 	.when('/content', {
 		templateUrl: '../templates/content.html',
-		controller: 'contentCtrl as ctrl'
+		controller: 'contentCtrl as ctrl',
+		resolve: {
+			dribble: function(api, $location) {
+				return api.getDribble()
+				.catch( function (response) {
+					console.log('error in dribble call', response);
+					$location.path('/signin');
+				});
+			},
+			productHunt: function(api, $location) {
+				return api.getProductHunt()
+				.catch( function (response) {
+					console.log('error in producthunt call', response);
+					$location.path('/signin');
+				})
+			}
+
+		}
 	})
 	.otherwise({
 		redirectTo: '/signin',
