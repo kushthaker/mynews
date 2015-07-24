@@ -34,7 +34,7 @@ class ArticlesController < ApplicationController
 		@article = @user.articles.find(params[:id])
 		@article.destroy
 
-		redirect_to 'articles#index'
+		redirect_to user_articles_path
 	end
 
 	private

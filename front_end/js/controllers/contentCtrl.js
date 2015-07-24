@@ -11,28 +11,21 @@ function ContentCtrl(api, $location, dribble, productHunt, genius) {
    this.genius = genius;
 
 	this.options = [
-	{label: 'Product Hunt', showAPI: function() {
-
-		return true;
-
-	}},
-	{label: 'Genius', showAPI: function() {
-		this.showProductHunt = false;
-		this.showGenius = true;
-
-		return false;
-	}}
+	{label: 'Product Hunt', selectedAPI: 0 },
+	{label: 'Genius', selectedAPI: 1}
 	];
 
 	this.apiOption = this.options[0];
+
+	this.selectedAPI = this.apiOption;
 
 }
 
 angular.module('pandaApp').controller('contentCtrl', ContentCtrl);
 
 ContentCtrl.prototype.saveArticle = function(postTitle, postURL) {
-	
-	this.article = { title: postTitle, url: postURL };
 
+	this.article = { title: postTitle, url: postURL };
 	this.api.saveArticle(this.article);
+	
 };

@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
   resources :users do
     resources :articles
+    resources :designs
   end
 
   post 'api/users' => 'users#create_user'
   post 'api/:user_id/articles' => 'articles#add_article'
+  post 'api/:user_id/designs' => 'designs#add_design'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

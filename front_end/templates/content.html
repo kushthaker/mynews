@@ -14,33 +14,28 @@
 			</div>
 			<div class="col-xs-9">
 				<form>
-					<select ng-model="ctrl.apiOption" ng-options="option.label for option in ctrl.options"></select>
+					<!-- <select ng-model="ctrl.apiOption" ng-options="option.label for option in ctrl.options"></select> -->
 				</form>
 			</div>
 		</div>
 	</section>
 
-
-
 	<section id="content">
 		<div class="row">
 			
 			<div class="col-xs-3 text-center">
-				<section id="articles">
-					
-					<div class="article" ng-repeat="post in ctrl.productHunt.posts" ng-show="ctrl.apiOption.showAPI()">
+				<section id="articles">			
+					<div class="article" ng-repeat="post in ctrl.productHunt.posts" ng-show="ctrl.apiOption.selectedAPI === 0">
 						<a href="{{post.discussion_url}}"><h4>{{post.name}}</h4></a>
 						<a ng-click="ctrl.saveArticle(post.name, post.discussion_url)">Fav</a>
 					</div>
-
-					<div class="article" ng-repeat="hit in ctrl.genius.response.hits" ng-show="!ctrl.apiOption.showAPI()">
+					<div class="article" ng-repeat="hit in ctrl.genius.response.hits" ng-show="ctrl.apiOption.selectedAPI === 1">
 						<a href="{{hit.result.url}}"><h4>{{hit.result.title}}</h4></a>
 						<a ng-click="ctrl.saveArticle(hit.result.title, hit.result.url)">Fav</a>
 					</div>
-
 				</section>
 			</div>
-
+			
 			<div class="col-xs-9 text-center">
 				<section id="images">
 					<span ng-repeat="object in ctrl.dribble">
