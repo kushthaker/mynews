@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  resources :users
+  resources :users do
+    resources :articles
+  end
 
-  post 'api/users' => 'users#signup'
+  post 'api/users' => 'users#create_user'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

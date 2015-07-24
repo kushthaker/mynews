@@ -1,24 +1,23 @@
 class UsersController < ApplicationController
 	
-	def signup
-		# @id = self.create()
+	def create_user
+		@id = self.create()
 
-		# if @id
-		# 	session[:user_id] = @id
-		# 	@message = 'User Created'
-		# 	@status = 200
-		# else
-		# 	@message = 'User not created'
-		# 	@status = 204
-		# end
+		if @id
+			session[:user_id] = @id
+			@message = 'User Created'
+			@status = 200
+		else
+			@message = 'User not created'
+			@status = 204
+		end
 
-		# @response = { :status => @status, :message => @message }
+		@response = { :status => @status, :message => @message }
 
-		# render :json => @response
+		render :json => @response
 
-		logger.debug session[:user_id]
-
-		render :json => session[:user_id]
+		# logger.debug session[:user_id]
+		# render :json => session[:user_id]
 	end
 
 	def index
@@ -46,7 +45,7 @@ class UsersController < ApplicationController
 	private
 
 	def user_params
-		params.require(:user).permit(:name, :email, :password)
+		return params.require(:user).permit(:name, :email, :password)
 	end
 
 end
