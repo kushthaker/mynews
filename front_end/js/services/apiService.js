@@ -41,6 +41,24 @@ ApiService.prototype.createUser = function(userObject) {
 
 };
 
+ApiService.prototype.saveArticle = function(articleObject) {
+
+	var self = this;
+
+	console.log(articleObject); 
+
+	return self.http.post(self.BASE_URL + '/api/20/articles.json', {"article": articleObject} )
+	.then(function(response) {
+		console.log("article post request successful")
+		return response.data;
+	})
+	.catch(function(response) {
+		console.log("article post request unsuccessful")
+		return response.data;
+	});
+
+};
+
 ApiService.prototype.getDribble = function() {
 
 	var self = this;

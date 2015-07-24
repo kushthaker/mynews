@@ -30,12 +30,12 @@
 					
 					<div class="article" ng-repeat="post in ctrl.productHunt.posts" ng-show="ctrl.apiOption.showAPI()">
 						<a href="{{post.discussion_url}}"><h4>{{post.name}}</h4></a>
-						<a ng-click="">Fav</a>
+						<a ng-click="ctrl.saveArticle(post.name, post.discussion_url)">Fav</a>
 					</div>
 
 					<div class="article" ng-repeat="hit in ctrl.genius.response.hits" ng-show="!ctrl.apiOption.showAPI()">
 						<a href="{{hit.result.url}}"><h4>{{hit.result.title}}</h4></a>
-						<a ng-click="">Fav</a>
+						<a ng-click="ctrl.saveArticle(hit.result.title, hit.result.url)">Fav</a>
 					</div>
 
 				</section>

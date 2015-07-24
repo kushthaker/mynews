@@ -29,3 +29,10 @@ function ContentCtrl(api, $location, dribble, productHunt, genius) {
 }
 
 angular.module('pandaApp').controller('contentCtrl', ContentCtrl);
+
+ContentCtrl.prototype.saveArticle = function(postTitle, postURL) {
+	
+	this.article = { title: postTitle, url: postURL };
+
+	this.api.saveArticle(this.article);
+};
