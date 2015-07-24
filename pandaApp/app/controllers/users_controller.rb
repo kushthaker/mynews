@@ -26,12 +26,13 @@ class UsersController < ApplicationController
 
 	def create
 		@user = User.new(user_params)
-
+		# @profile = Profile.new(profile_params)
 		if @user.save
 			return @user.id
 		else
 			return false
 		end
+		# @profile.user_id = @user.id
 	end
 
 	def destroy
@@ -45,7 +46,9 @@ class UsersController < ApplicationController
 	private
 
 	def user_params
-		return params.require(:user).permit(:name, :email, :password)
+		return params.require(:user).permit(:email, :password)
 	end
-
+	# def profile_params
+	# 	return params.require(:user).permit(:name)
+	# end
 end
