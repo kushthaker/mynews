@@ -31,7 +31,7 @@ app.config(function($routeProvider) {
 					})
 			},
 
-			nytimes: function(api, $location) {
+			genius: function(api, $location) {
 					return api.getGenius()
 					.catch( function (response) {
 						console.log('error in genius call', response);

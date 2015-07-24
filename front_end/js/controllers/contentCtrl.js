@@ -1,23 +1,38 @@
 
-function ContentCtrl(api, dribble, $location, productHunt) {
+function ContentCtrl(api, $location, dribble, productHunt, genius) {
    
    //services
    this.api = api;
    this.location = $location;
-   this.option = "Product Hunt";
 
    //api calls
    this.dribble = dribble;
    this.productHunt = productHunt;
+   this.genius = genius;
+
+	this.options = [
+	{label: 'Product Hunt', showAPI: function() {
+
+		return true;
+
+	}},
+	{label: 'Genius', showAPI: function() {
+		this.showProductHunt = false;
+		this.showGenius = true;
+
+		return false;
+	}}
+	];
+
+	this.apiOption = this.options[0];
 
 }
 
 angular.module('pandaApp').controller('contentCtrl', ContentCtrl);
 
-// ContentCtrl.prototype.loadAPIs = function() {
+ContentCtrl.prototype.loadAPIs = function() {
 
-// 	this.api.option = this.option;
 
-// 	this.location.path('/content');
+	this.location.path('/content');
 
-// };
+};

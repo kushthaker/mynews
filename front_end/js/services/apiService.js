@@ -2,11 +2,7 @@ function ApiService($http) {
 
 	this.http = $http;
 
-	this.options = [
-	{label: 'Product Hunt'},
-	{label: 'NY Times'}
-	];
-
+	//URLs
 	this.BASE_URL = 'http://localhost:3000';
 	this.DRIBBLE_URL = 'https://api.dribbble.com/v1/shots?';
 	this.PH_URL = 'https://api.producthunt.com/v1/posts?';
@@ -83,6 +79,7 @@ ApiService.prototype.getGenius = function(){
 	return self.http.get(self.GENIUS_URL + self.genius_token)
 	.then(function(response) {
 		console.log("successful genius call")
+		console.log(response.data)
 		return response.data;
 	})
 	.catch(function(response) {
