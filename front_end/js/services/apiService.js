@@ -79,7 +79,6 @@ ApiService.prototype.getGenius = function(){
 	return self.http.get(self.GENIUS_URL + self.genius_token)
 	.then(function(response) {
 		console.log("successful genius call")
-		console.log(response.data)
 		return response.data;
 	})
 	.catch(function(response) {

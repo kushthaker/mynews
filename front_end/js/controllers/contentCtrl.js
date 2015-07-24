@@ -29,10 +29,3 @@ function ContentCtrl(api, $location, dribble, productHunt, genius) {
 }
 
 angular.module('pandaApp').controller('contentCtrl', ContentCtrl);
-
-ContentCtrl.prototype.loadAPIs = function() {
-
-
-	this.location.path('/content');
-
-};
