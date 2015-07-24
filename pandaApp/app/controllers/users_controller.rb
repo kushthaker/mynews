@@ -1,17 +1,24 @@
 class UsersController < ApplicationController
 	
-	def create_user
-		@status = self.create()
+	def signup
+		# @id = self.create()
 
-		
-		if @status == 201
-			@message = 'User Created'
-		else
-			@message = 'User not created'
-		end
+		# if @id
+		# 	session[:user_id] = @id
+		# 	@message = 'User Created'
+		# 	@status = 200
+		# else
+		# 	@message = 'User not created'
+		# 	@status = 204
+		# end
 
-		@response = { :status => @status, :message => @message }
-		render :json => @response
+		# @response = { :status => @status, :message => @message }
+
+		# render :json => @response
+
+		logger.debug session[:user_id]
+
+		render :json => session[:user_id]
 	end
 
 	def index
@@ -22,11 +29,10 @@ class UsersController < ApplicationController
 		@user = User.new(user_params)
 
 		if @user.save
-			return 201
+			return @user.id
 		else
-			return 205
+			return false
 		end
-
 	end
 
 	def destroy

@@ -8,7 +8,7 @@
 	<section id="options">
 		<div class="row">
 			<div class="col-xs-3">
-				<h4>ng-options for article source</h4>
+				<select ng-model="ctrl.option" ng-options="option.label for option in ctrl.api.options" ng-click="ctrl.loadAPIs()"></select>
 			</div>
 			<div class="col-xs-9">
 				<h4>ng-options for design source</h4>

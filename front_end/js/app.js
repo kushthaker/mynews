@@ -14,6 +14,7 @@ app.config(function($routeProvider) {
 		templateUrl: '../templates/content.html',
 		controller: 'contentCtrl as ctrl',
 		resolve: {
+			
 			dribble: function(api, $location) {
 				return api.getDribble()
 				.catch( function (response) {
@@ -21,13 +22,23 @@ app.config(function($routeProvider) {
 					$location.path('/signin');
 				});
 			},
+
 			productHunt: function(api, $location) {
-				return api.getProductHunt()
-				.catch( function (response) {
-					console.log('error in producthunt call', response);
-					$location.path('/signin');
-				})
+					return api.getProductHunt()
+					.catch( function (response) {
+						console.log('error in producthunt call', response);
+						$location.path('/signin');
+					})
+			},
+
+			nytimes: function(api, $location) {
+					return api.getGenius()
+					.catch( function (response) {
+						console.log('error in genius call', response);
+						$location.path('/signin');
+					})
 			}
+
 
 		}
 	})
