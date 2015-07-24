@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+
+	before_action :authenticate_user!
 	
 	def create_user
 		@id = self.create()
@@ -21,6 +23,7 @@ class UsersController < ApplicationController
 	end
 
 	def index
+		@user = current_user
 		@users = User.all 
 	end
 

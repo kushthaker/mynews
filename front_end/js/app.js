@@ -1,4 +1,12 @@
-var app = angular.module('pandaApp', ['ngRoute']);
+var app = angular.module('pandaApp', ['ngRoute', 'ng-token-auth']);
+
+
+app.config(function($authProvider) {
+	$authProvider.configure({
+		apiUrl: 'http://localhost:3000',
+	});
+});
+
 
 app.config(function($routeProvider) {
 	$routeProvider
@@ -24,19 +32,19 @@ app.config(function($routeProvider) {
 			},
 
 			productHunt: function(api, $location) {
-					return api.getProductHunt()
-					.catch( function (response) {
-						console.log('error in producthunt call', response);
-						$location.path('/signin');
-					})
+				return api.getProductHunt()
+				.catch( function (response) {
+					console.log('error in producthunt call', response);
+					$location.path('/signin');
+				})
 			},
 
 			genius: function(api, $location) {
-					return api.getGenius()
-					.catch( function (response) {
-						console.log('error in genius call', response);
-						$location.path('/signin');
-					})
+				return api.getGenius()
+				.catch( function (response) {
+					console.log('error in genius call', response);
+					$location.path('/signin');
+				})
 			}
 
 

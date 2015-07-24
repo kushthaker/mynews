@@ -6,25 +6,24 @@
 
 <body>
 
-	<div class="container signup-form">
-		<form name="frm">
-			<div class="form-group">
-				<label>Email</label>
-				<input type="email" name="email" ng-model="ctrl.user.email" required />
-			</div>	
-			<div>
-				<label>Password</label>
-				<input type="password" name="password" ng-model="ctrl.user.password" required />
-			</div>
-			<div>
-				<label>Password Confirmation</label>
-				<input type="password" name="password" ng-model="ctrl.user.password_confirmation" required />
-			</div>
-			<div class="form-group">
-				<input type="submit" ng-click="ctrl.createUser()" />
-			</div>
-		</form>
-	</div>
+	<form ng-submit="ctrl.signUp()" role="form">
+		<div class="form-group">
+			<label>email</label>
+			<input type="email" name="email" ng-model="ctrl.registrationForm.email" required="required" class="form-control"/>
+		</div>
+
+		<div class="form-group">
+			<label>password</label>
+			<input type="password" name="password" ng-model="ctrl.registrationForm.password" required="required" class="form-control"/>
+		</div>
+
+		<div class="form-group">
+			<label>password confirmation</label>
+			<input type="password" name="password_confirmation" ng-model="ctrl.registrationForm.password_confirmation" required="required" class="form-control"/>
+		</div>
+
+		<button type="submit" class="btn btn-primary btn-lg">Register</button>
+	</form>
 
 </body>
 
