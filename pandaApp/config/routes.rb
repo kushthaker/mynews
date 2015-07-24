@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   end
 
   post 'api/users' => 'users#create_user'
+  post 'api/articles' => 'articles#add_article'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

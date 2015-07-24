@@ -22,9 +22,20 @@ class ArticlesController < ApplicationController
 		else
 			return 204
 		end
-
 	end
-	
+
+
+	def index
+		@articles = Article.all
+	end
+
+	def destroy
+		@user = User.find(params[:user_id])
+		@article = @user.articles.find(params[:id])
+		@article.destroy
+
+		redirect_to articles_path
+	end
 
 	private
 
