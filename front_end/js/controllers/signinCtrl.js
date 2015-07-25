@@ -11,12 +11,13 @@ angular.module('pandaApp').controller('signinCtrl', SigninCtrl);
 
 
 SigninCtrl.prototype.login = function() {
-	var that = this
-	this.auth.submitLogin(this.loginForm)
+	var self = this;
+	self.auth.submitLogin(self.loginForm)
 	.then(function(resp) {
 		console.log('successful login', resp);
-		that.http.get('http://localhost:3000/users/').success(function(res) {
+		self.http.get('http://localhost:3000/users/').success(function(res) {
 			console.log(res);
+			self.location.path('/content');
 		});
 	})
 	.catch(function(resp) {

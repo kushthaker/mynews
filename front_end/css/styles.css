@@ -9,7 +9,11 @@ input.ng-invalid {
 }
 
 .signup-form {
-	margin: 100px;
+	margin-top: 100px;
+}
+
+.signup-form {
+	margin-top: 100px;
 }
 
 #articles {
