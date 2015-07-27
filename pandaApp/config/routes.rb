@@ -2,10 +2,12 @@ Rails.application.routes.draw do
   
   mount_devise_token_auth_for 'User', at: 'auth'
 
-  resources :users
+  resources :users do
+    resources :articles
+  end
 
-  post 'api/users' => 'users#create_user'
-  post 'api/:user_id/articles' => 'articles#add_article'
+  post 'api/articles' => 'articles#add_article'
+  get 'api/articles' => 'articles#index'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

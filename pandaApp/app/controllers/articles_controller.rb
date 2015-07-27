@@ -1,5 +1,7 @@
 class ArticlesController < ApplicationController
 
+	# before_action :authenticate_user!
+
 	def add_article
 		@status = self.create()
 
@@ -14,8 +16,7 @@ class ArticlesController < ApplicationController
 	end
 
 	def create
-		@user = User.find(params[:user_id])
-		@article = @user.articles.create(article_params)
+		@article = current_user.articles.create(article_params)
 
 		if @article
 			return 200
@@ -40,7 +41,7 @@ class ArticlesController < ApplicationController
 	private
 
 	def article_params
-		params.require(:article).permit(:user_id, :title, :url)
+		params.require(:article).permit(:article_type, :content, :url)
 	end
 
 

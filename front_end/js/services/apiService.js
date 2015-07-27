@@ -29,7 +29,7 @@ ApiService.prototype.saveArticle = function(articleObject) {
 
 	console.log(articleObject); 
 
-	return self.http.post(self.BASE_URL + '/api/20/articles.json', {"article": articleObject} )
+	return self.http.post(self.BASE_URL + '/api/articles', {"article": articleObject} )
 	.then(function(response) {
 		console.log("article post request successful")
 		return response.data;
