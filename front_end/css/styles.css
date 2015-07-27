@@ -12,7 +12,7 @@ input.ng-invalid {
 	margin: 100px;
 }
 
-#articles {
+.articles {
 	margin-top: 10px
 }
 
@@ -20,7 +20,7 @@ input.ng-invalid {
 	margin: 30px auto;
 }
 
-#images {
+.images {
 	margin: 10px auto;
 }
 

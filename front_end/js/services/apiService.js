@@ -16,7 +16,6 @@ function ApiService($http) {
 
 	//NYTimes
 	this.genius_token = "access_token=4jiqWRKhn_2I461zuKvR_4cz7AhRCxEzaxJOEeS_GiJCtCcTkQja41EJqyl2xM4b";
-
 }
 
 angular.module('pandaApp').service('api', ApiService);

@@ -24,7 +24,7 @@
 		<div class="row">
 			
 			<div class="col-xs-3 text-center">
-				<section id="articles">			
+				<section class="articles">			
 					<div class="article" ng-repeat="post in ctrl.productHunt.posts" ng-show="ctrl.apiOption.selectedAPI === 0">
 						<a href="{{post.discussion_url}}"><h4>{{post.name}}</h4></a>
 						<a ng-click="ctrl.saveFavorite('article', post.name, post.discussion_url)">Favorite</a>
@@ -37,7 +37,7 @@
 			</div>
 			
 			<div class="col-xs-9 text-center">
-				<section id="images">
+				<section class="images">
 					<span ng-repeat="object in ctrl.dribble">
 						<a href="{{object.html_url}}"><img ng-src="{{object.images.teaser}}" class="image" /><a ng-click="ctrl.saveFavorite('design', object.images.teaser, object.html_url)">Favorite</a>
 					</span>
@@ -46,9 +46,6 @@
 			
 		</div>
 	</section>
-
-
-	<pre> {{ ctrl.favorites | json }} </pre>
 
 
 </body>

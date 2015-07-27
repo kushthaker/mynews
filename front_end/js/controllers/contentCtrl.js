@@ -30,7 +30,7 @@ ContentCtrl.prototype.saveFavorite = function(articleType, postContent, postURL)
 	self.article = { article_type: articleType, content: postContent, url: postURL };
 	self.api.saveFavorite(self.article);
 	self.api.getFavorites().then(function (data){
-		self.favorites = data;
+		self.api.favorited = data;
 	});
 	
 };
