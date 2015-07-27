@@ -17,5 +17,9 @@
     "angular": "~1.4.3",
     "angular-route": "~1.4.3",
     "ng-token-auth": "~0.0.25"
+  },
+  "resolutions": {
+    "angular": "~1.4.3",
+    "angular-bootstrap": "~0.12.0"
   }
 }

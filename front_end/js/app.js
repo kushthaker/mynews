@@ -1,4 +1,4 @@
-var app = angular.module('pandaApp', ['ngRoute', 'ng-token-auth']);
+var app = angular.module('pandaApp', ['ngRoute', 'ng-token-auth', 'ui.bootstrap']);
 
 
 app.config(function($authProvider) {
@@ -51,7 +51,7 @@ app.config(function($routeProvider) {
 		}
 	})
 	.otherwise({
-		redirectTo: '/signin',
+		redirectTo: '/content',
 	})
 
 });
