@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
-  mount_devise_token_auth_for 'User', at: 'auth'
-  resources :users
   
+  mount_devise_token_auth_for 'User', at: 'auth'
+
+  resources :users
+
+  post 'api/users' => 'users#create_user'
+  post 'api/:user_id/articles' => 'articles#add_article'
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

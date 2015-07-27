@@ -8,12 +8,8 @@ input.ng-invalid {
 	height: 30px;
 }
 
-.signin-form {
-	margin-top: 100px;
-}
-
 .signup-form {
-	margin-top: 100px;
+	margin: 100px;
 }
 
 #articles {
