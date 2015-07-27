@@ -1,10 +1,13 @@
 
-function SignupCtrl($location, api, $auth) {
+function SignupCtrl($location, api, $auth, user) {
 
+	// Services
 	this.api = api;
 	this.auth = $auth;
 	this.location = $location;
-	this.registrationForm = {};
+	this.user = user;
+
+	this.registrationForm = this.user.registrationForm;
 
 }
 
@@ -13,15 +16,7 @@ angular.module('pandaApp').controller('signupCtrl', SignupCtrl);
 
 
 SignupCtrl.prototype.signUp = function() {
-
-	var self = this;
-
-	self.auth.submitRegistration(self.registrationForm)
-	.then(function(resp) {
-		console.log('successful login', resp);
-		self.location.path('/content');
-      })
-	.catch(function(resp) {
-        console.log('unsuccessful login', resp);
-      });
+	this.user.registrationForm = this.registrationForm;
+	this.user.signUp();
 };
+
