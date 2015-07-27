@@ -23,9 +23,14 @@ function ContentCtrl(api, $location, dribble, productHunt, genius) {
 
 angular.module('pandaApp').controller('contentCtrl', ContentCtrl);
 
-ContentCtrl.prototype.saveArticle = function(articleType, postContent, postURL) {
+ContentCtrl.prototype.saveFavorite = function(articleType, postContent, postURL) {
 
-	this.article = { article_type: articleType, content: postContent, url: postURL };
-	this.api.saveArticle(this.article);
+	var self = this;
+
+	self.article = { article_type: articleType, content: postContent, url: postURL };
+	self.api.saveFavorite(self.article);
+	self.api.getFavorites().then(function (data){
+		self.favorites = data;
+	});
 	
 };

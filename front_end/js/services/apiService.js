@@ -23,7 +23,7 @@ angular.module('pandaApp').service('api', ApiService);
 
 
 
-ApiService.prototype.saveArticle = function(articleObject) {
+ApiService.prototype.saveFavorite = function(articleObject) {
 
 	var self = this;
 
@@ -36,6 +36,22 @@ ApiService.prototype.saveArticle = function(articleObject) {
 	})
 	.catch(function(response) {
 		console.log("article post request unsuccessful")
+		return response.data;
+	});
+
+};
+
+ApiService.prototype.getFavorites = function() {
+
+	var self = this;
+
+	return self.http.get(self.BASE_URL + '/api/articles.json')
+	.then(function(response) {
+		console.log("articles get request successful")
+		return response.data;
+	})
+	.catch(function(response) {
+		console.log("articles get request unsuccessful")
 		return response.data;
 	});
 
