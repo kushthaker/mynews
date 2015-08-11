@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
 
-	# before_action :authenticate_user!
+	before_action :authenticate_user!
 
 	def add_article
 		@status = self.create()
