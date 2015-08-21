@@ -12,7 +12,7 @@ app.config(function($routeProvider) {
 				return api.getDribble()
 				.catch( function (response) {
 					console.log('error in dribble call', response);
-					$location.path('/signin');
+					$location.path('/content');
 				});
 			},
 
@@ -20,7 +20,7 @@ app.config(function($routeProvider) {
 				return api.getProductHunt()
 				.catch( function (response) {
 					console.log('error in producthunt call', response);
-					$location.path('/signin');
+					$location.path('/content');
 				})
 			},
 
@@ -28,9 +28,18 @@ app.config(function($routeProvider) {
 				return api.getGenius()
 				.catch( function (response) {
 					console.log('error in genius call', response);
-					$location.path('/signin');
+					$location.path('/content');
+				})
+			},
+
+			nytimes: function(api, $location) {
+				return api.getNYTimes()
+				.catch( function (response) {
+					console.log('error in NYT call', response);
+					$location.path('/content');
 				})
 			}
+
 
 
 		}

@@ -1,5 +1,5 @@
 
-function ContentCtrl(api, $location, dribble, productHunt, genius) {
+function ContentCtrl(api, $location, dribble, productHunt, genius, nytimes) {
    
    //services
    this.api = api;
@@ -9,6 +9,7 @@ function ContentCtrl(api, $location, dribble, productHunt, genius) {
    this.dribble = dribble;
    this.productHunt = productHunt;
    this.genius = genius;
+   this.nytimes = nytimes;
 
    //for ng-options to switch between APIs
 	this.options = [
