@@ -14,7 +14,8 @@ function ContentCtrl(api, $location, dribble, productHunt, genius, nytimes) {
    //for ng-options to switch between APIs
 	this.options = [
 	{label: 'Product Hunt', selectedAPI: 0 },
-	{label: 'Genius', selectedAPI: 1}
+	{label: 'Genius', selectedAPI: 1},
+	{label: 'NYTimes', selectedAPI: 2}
 	];
 
 	this.apiOption = this.options[0];
