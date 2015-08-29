@@ -61,7 +61,7 @@ ApiService.prototype.getDribble = function() {
 
 	var self = this;
 
-	return self.http.get(self.DRIBBLE_URL + self.dribble_access_token)
+	return self.http.get(self.BASE_URL + '/api/dribble')
 	.then(function(response) {
 		console.log("successful dribble call")
 		return response.data;
@@ -76,7 +76,7 @@ ApiService.prototype.getProductHunt = function() {
 
 	var self = this;
 
-	return self.http.jsonp(self.PH_URL + self.ph_access_token)
+	return self.http.get(self.BASE_URL + '/api/producthunt')
 	.then(function(response) {
 		console.log("successful producthunt call")
 		return response.data;
@@ -92,7 +92,7 @@ ApiService.prototype.getGenius = function(){
 
 	var self = this;
 
-	return self.http.get(self.GENIUS_URL + self.genius_token)
+	return self.http.get(self.BASE_URL + '/api/genius')
 	.then(function(response) {
 		console.log("successful genius call")
 		return response.data;
@@ -107,7 +107,7 @@ ApiService.prototype.getNYTimes = function(){
 
 	var self = this;
 
-	return self.http.get(self.NYT_URL)
+	return self.http.get(self.BASE_URL + '/api/nytimes')
 	.then(function(response) {
 		console.log("successful NYT call")
 		return response.data;
