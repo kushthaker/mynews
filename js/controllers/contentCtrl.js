@@ -18,6 +18,11 @@ function ContentCtrl(api, $location, dribble, productHunt, genius, nytimes) {
 	{label: 'NYTimes', selectedAPI: 2}
 	];
 
+	this.imageOptions = [
+	{label: 'Dribble', selectedImage: 0 }
+	]
+
+	this.imageOption = this.imageOptions[0];
 	this.apiOption = this.options[0];
 	this.selectedAPI = this.apiOption;
 
