@@ -4,6 +4,8 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Panda Content</title>
+
+
 </head>
 <body>
 
@@ -28,7 +30,7 @@
 			<div class="col-xs-4">
 				<section class="articles">			
 					
-					<div class="article" ng-repeat="post in ctrl.productHunt.posts | limitTo:15" ng-show="ctrl.apiOption.selectedAPI === 0">
+					<div class="article" ng-repeat="post in ctrl.productHunt.posts | limitTo:15" ng-show="ctrl.apiOption.selectedAPI === 0" ng-class="$index % 2 === 0">
 						<h4 class="number">{{$index + 1}} </h4><h4><a href="{{post.discussion_url}}">{{post.name}}</a></h4>
 					</div>
 					
@@ -58,5 +60,3 @@
 
 	</body>
 	</html>
-
-	<pre>{{ctrl.nytimes | json}}</pre>

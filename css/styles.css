@@ -7,15 +7,23 @@ MEDIUM #8dc3d8
 LIGHTER LIGHT #cccccc
 LIGHTEST #e6e6e6
 
+font-family: 'Lato', sans-serif;
+font-family: 'Oswald', sans-serif;
+
+
+
 */
 
 #header {
-	background-color: #68afca;
-	padding: 20px;
+	background-color: #439abc;
+	padding: 10px;
+	font-family: 'Lato', sans-serif;
+	margin: 20px 0px;
 }
 
 #header h1 {
 	text-align: center;
+	color: #FFFFFF ;
 }
 
 #options {
@@ -44,6 +52,12 @@ LIGHTEST #e6e6e6
 
 h4 {
 	font-size: 18px;
+	font-family: 'Oswald', sans-serif;
+}
+
+a {
+	color: #333;
+	font-family: 'Lato', sans-serif;
 }
 
 .number {
@@ -51,16 +65,18 @@ h4 {
 	margin: 10px 0;
 	margin-right: 20px;
 	font-weight: 700;
-	font-family: Times;
+	font-family: 'Oswald', sans-serif;
 }
 
 .number .ny {
 	margin: 15px 0;
 }
 
-.nyfont {
-	font-size: 14px;
+.article .nyfont h4 {
+	font-size: 16px;
 }
+
+
 
 
 
