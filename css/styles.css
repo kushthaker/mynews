@@ -1,7 +1,21 @@
+/*
+COLOR PALETTE
 
+DARKEST #439abc
+LIGHTER DARK #68afca
+MEDIUM #8dc3d8
+LIGHTER LIGHT #cccccc
+LIGHTEST #e6e6e6
 
-input.ng-invalid {
-	border: 1px solid red;
+*/
+
+#header {
+	background-color: #68afca;
+	padding: 20px;
+}
+
+#header h1 {
+	text-align: center;
 }
 
 #options {
@@ -13,20 +27,39 @@ input.ng-invalid {
 }
 
 .articles {
-	margin-top: 10px
+	margin-top: 15px
 }
 
 .article {
-	margin: 30px auto;
-}
-
-.images {
 	margin: 10px auto;
+	background-color: #e6e6e6;
+	padding: 10px;
 }
-
 
 .image {
-	margin: 20px;
+	margin: 10px;
+	background-color: #e6e6e6;
+	padding: 20px;
+}
+
+h4 {
+	font-size: 18px;
+}
+
+.number {
+	float: left;
+	margin: 10px 0;
+	margin-right: 20px;
+	font-weight: 700;
+	font-family: Times;
+}
+
+.number .ny {
+	margin: 15px 0;
+}
+
+.nyfont {
+	font-size: 14px;
 }
 
 

@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Panda Content</title>
 </head>
 <body>
@@ -23,44 +25,38 @@
 	<section id="content">
 		<div class="row">
 			
-			<div class="col-xs-3 text-center">
+			<div class="col-xs-4">
 				<section class="articles">			
 					
-					<div class="article" ng-repeat="post in ctrl.productHunt.posts" ng-show="ctrl.apiOption.selectedAPI === 0">
-						<a href="{{post.discussion_url}}"><h4>{{post.name}}</h4></a>
+					<div class="article" ng-repeat="post in ctrl.productHunt.posts | limitTo:15" ng-show="ctrl.apiOption.selectedAPI === 0">
+						<h4 class="number">{{$index + 1}} </h4><h4><a href="{{post.discussion_url}}">{{post.name}}</a></h4>
 					</div>
 					
-					<div class="article" ng-repeat="hit in ctrl.genius.response.hits" ng-show="ctrl.apiOption.selectedAPI === 1">
-						<a href="{{hit.result.url}}"><h4>{{hit.result.title}}</h4></a>
+					<div class="article" ng-repeat="hit in ctrl.genius.response.hits | limitTo:15" ng-show="ctrl.apiOption.selectedAPI === 1">
+						<h4 class="number">{{$index + 1}} </h4><h4><a href="{{hit.result.url}}">{{hit.result.title}}</a></h4>
 					</div>
 
-					<div class="article" ng-repeat="article in ctrl.nytimes.results" ng-show="ctrl.apiOption.selectedAPI === 2">
-						<a href="{{article.url}}"><h4>{{article.title}}</h4></a>
+					<div class="article" ng-repeat="article in ctrl.nytimes.results | limitTo:15" ng-show="ctrl.apiOption.selectedAPI === 2">
+						<div class="nyfont">
+							<h4 class="number ny">{{$index + 1}}</h4><h4><a href="{{article.url}}">{{article.title}}</a></h4>
+						</div>
 					</div>
 
 				</section>
 			</div>
 			
-			<div class="col-xs-9 text-center">
+			<div class="col-xs-8 text-center">
 				<section class="images">
 					<span ng-repeat="object in ctrl.dribble">
 						<a href="{{object.html_url}}"><img ng-src="{{object.images.teaser}}" class="image" />
-					</span>
-				</section>
+						</span>
+					</section>
+				</div>
+
 			</div>
+		</section>
 
-			<div class="col-xs-9 text-center">
-				<section class="images">
-					<span ng-repeat="object in ctrl.dribble">
-						<a href="{{object.html_url}}"><img ng-src="{{object.images.teaser}}" class="image" />
-					</span>
-				</section>
-			</div>
-			
-		</div>
-	</section>
+	</body>
+	</html>
 
-</body>
-</html>
-
-<pre>{{ctrl.nytimes | json}}</pre>
+	<pre>{{ctrl.nytimes | json}}</pre>
