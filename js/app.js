@@ -1,4 +1,4 @@
-var app = angular.module('pandaApp', ['ngRoute', 'ng-token-auth', 'ui.bootstrap']);
+var app = angular.module('pandaApp', ['ngRoute', 'ng-token-auth', 'angular-loading-bar']);
 
 
 app.config(function($routeProvider) {
