@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Trello Responses</title>
+</head>
+<body>
+	<div class="article" ng-repeat="card in ctrl.trello_cards">
+		<a href="{{card.url}}">{{card.name}}</a>
+		<strong>{{card.id}}</strong>
+	</div>
+
+
+	<pre>
+			{{ctrl.trello_cards | json}}
+	</pre>
+</body>
+</html>
+
+<a href="{{article.url}}">{{article.title}}</a>

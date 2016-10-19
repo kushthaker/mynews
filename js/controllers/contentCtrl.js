@@ -1,5 +1,5 @@
 
-function ContentCtrl(api, $location, dribble, productHunt, genius, nytimes) {
+function ContentCtrl(api, $location, dribble, productHunt, genius, nytimes, trello_cards) {
    
    //services
    this.api = api;
@@ -10,6 +10,7 @@ function ContentCtrl(api, $location, dribble, productHunt, genius, nytimes) {
    this.productHunt = productHunt;
    this.genius = genius;
    this.nytimes = nytimes;
+   this.trello_cards = trello_cards;
 
    //for ng-options to switch between APIs
 	this.options = [

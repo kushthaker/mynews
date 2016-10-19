@@ -44,20 +44,20 @@ app.config(function($routeProvider) {
 
 		}
 	})
-	// .when('/trello', {
-	// 	templateUrl: '../templates/trello.html',
-	// 	controller: 'trelloCtrl as ctrl',
-	// 	resolve: {
-	// 		trello: function(api, $location) {
-	// 			return api.getFavorites()
-	// 			.catch( function (response) {
-	// 				console.log('error in favorites call', response);
-	// 				$location.path('/signin');
-	// 			})
+	.when('/trello', {
+		templateUrl: '../templates/trello.html',
+		controller: 'trelloCtrl as ctrl',
+		resolve: {
+			trello_cards: function(api, $location) {
+				return api.getTrello()
+				.catch( function (response) {
+					console.log('error in trello call', response);
+					$location.path('/trello');
+				})
 
-	// 		}
-	// 	}
-	// })
+			}
+		}
+	})
 
 	.otherwise({
 		redirectTo: '/content',

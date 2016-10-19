@@ -69,7 +69,20 @@ ApiService.prototype.getNYTimes = function(){
 	}); 
 }
 
+ApiService.prototype.getTrello = function(){
 
+	var self = this;
+
+	return self.http.get(self.BASE_URL + '/api/trello_cards')
+	.then(function(response) {
+		console.log("successful trello call")
+		return response.data;
+	})
+	.catch(function(response) {
+		console.log("unsuccessful trello call")
+		return response.data;
+	}); 
+}
 
 
 
